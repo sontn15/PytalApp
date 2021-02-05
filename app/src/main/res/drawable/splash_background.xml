@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:opacity="opaque">
+
+    <!-- The white background color as one in Amazon, YouTube, or Drive app -->
+    <item android:drawable="@drawable/shape_bg_black" />
+
+    <!-- App logo -->
+    <item
+        android:width="250dp"
+        android:height="250dp"
+        android:gravity="center"
+        tools:ignore="UnusedAttribute">
+        <bitmap android:src="@drawable/ic_launcher" />
+    </item>
+
+</layer-list>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:background="@color/colorDenMo"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_8sdp"
+        android:text="@string/themmoisoicaumb"
+        android:textColor="@color/colorVang"
+        android:textSize="@dimen/_15ssp" />
+
+    <TextView
+        android:id="@+id/tvDateTimeSoiCauMb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="Ngày: 05/12/2020"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtNhaDaiSoiCau"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:background="@drawable/edt_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/nhap_nha_dai"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLength="100"
+        android:paddingStart="@dimen/_8sdp"
+        android:singleLine="true"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/edtBachThuLoSoiCauDlg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_custom"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/bachthulo_lower"
+            android:maxLength="2"
+            android:paddingStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <requestFocus />
+
+        <EditText
+            android:id="@+id/edtSongThuLo1SoiCauDlg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_custom"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/songthulo_1_lower"
+            android:maxLength="2"
+            android:paddingStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtSongThuLo2SoiCauDlg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edt_custom"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/songthulo_2_lower"
+            android:maxLength="2"
+            android:paddingStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_8sdp"
+        android:text="Danh sách dàn đề 6X:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvNumberSoiCauDlg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp" />
+
+    <TextView
+        android:id="@+id/tvTotalNumberChooseSoiCauDlg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="Bạn đã chọn: 30"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_12ssp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCancelSoiCauDlg"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg_bovien_button_xam"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/huy_bo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <Button
+            android:id="@+id/btnAgreeSoiCauDlg"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg_button_black"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/them_moi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>

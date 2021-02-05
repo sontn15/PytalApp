@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "890386903639",
+    "project_id": "pytalapp",
+    "storage_bucket": "pytalapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890386903639:android:9fefbde2b368c11342a912",
+        "android_client_info": {
+          "package_name": "com.sh.pytalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890386903639-t5jcessurco8g4hg90qq4s3rvnhpvgie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdcHIb6KzaVNeXeKhgwcHtsF6ksKshkaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890386903639-t5jcessurco8g4hg90qq4s3rvnhpvgie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

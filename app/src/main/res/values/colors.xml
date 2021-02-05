@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#555555</color>
+    <color name="colorPrimaryDark">#5f5f5f</color>
+    <color name="colorAccent">#5f5f5f</color>
+    <color name="colorPrimaryMo">#B6B6B6</color>
+    <color name="colorPrimaryPress">#555555</color>
+
+    <color name="whiteTextColor">#fff</color>
+    <color name="colorVinID">#F44336</color>
+    <color name="colorVinIDPress">#F43021</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorColumn">#e0e0e0</color>
+    <color name="colorDen">#2B3035</color>
+    <color name="colorDenMo">#30353A</color>
+    <color name="colorDenPress">#202427</color>
+    <color name="colorTrangNga">#F8F8F8</color>
+    <color name="colorXanhLogo">#74f5f3</color>
+    <color name="colorXanh">#00CF56</color>
+    <color name="colorDoLogo">#FF7878</color>
+    <color name="colorDoLogoPress">#FF6666</color>
+    <color name="colorHong">#F66E89</color>
+    <color name="colorVangLogo">#ffde59</color>
+    <color name="colorVangLogoPress">#EDCC49</color>
+    <color name="colorVang">#ffde59</color>
+    <color name="colorXanhChild">#115D80</color>
+    <color name="colorXanhDaTroi">#011FC8</color>
+    <color name="colorNauNhat">#C15B47</color>
+    <color name="colorGachChan">#f7f7f7</color>
+    <color name="colorMo">#E3E0E0</color>
+    <color name="blackMoMo">#777777</color>
+    <string name="xoa">Xóa mã code</string>
+    <color name="black_mo_2">#B6B6B6</color>
+    <color name="black_mo_2Press">#A6A0A0</color>
+</resources>

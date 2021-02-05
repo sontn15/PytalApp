@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llActivityAnalyzerTaiXiu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/taixiu_70"
+    android:orientation="vertical"
+    android:weightSum="17.5"
+    tools:context=".ui.activity.GameXocDiaActivity">
+
+    <TextView
+        android:id="@+id/tvTitleNhapTenBanTaiXiu"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_3sdp"
+        android:text="@string/nhaptenbanbaogom"
+        android:textColor="@color/colorDenPress"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtTableCodeTaiXiu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:background="@drawable/edt_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/tenbancanphantich"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:maxLength="13"
+        android:maxLines="1"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/colorVinID"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnAnalyzerTaiXiu"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_bg_button_black"
+        android:text="@string/phantich"
+        android:textColor="@color/colorVang"
+        android:textSize="@dimen/_15ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/soban"
+            android:textColor="@color/colorDenPress"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNameTableTaiXiu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="right|center_vertical"
+            android:text="B1234"
+            android:textColor="@color/colorVinID"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/ketqua_chanle"
+            android:textColor="@color/colorDenPress"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResultForChanLeTaiXiu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="right|center_vertical"
+            android:text="Chẵn"
+            android:textColor="@color/colorVinID"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/ketqua_tobe"
+            android:textColor="@color/colorDenPress"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResultForToBeTaiXiu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="right|center_vertical"
+            android:text="To"
+            android:textColor="@color/colorVinID"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/colorVangLogoPress"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/llBorderAnalyzerTaiXiu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:layout_weight="8"
+        android:background="@color/colorDenMo"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_16sdp"
+        android:paddingRight="@dimen/_16sdp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_8sdp"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_3sdp"
+                app:cardUseCompatPadding="true"
+                tools:ignore="NestedWeights">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:text="To "
+                        android:textColor="@color/colorDenMo"
+                        android:textSize="@dimen/_25ssp" />
+
+                    <TextView
+                        android:id="@+id/tvToResultTaiXiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.2"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="30%"
+                        android:textColor="@color/colorVinID"
+                        android:textSize="@dimen/_30ssp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_3sdp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:text="Lẻ "
+                        android:textColor="@color/colorDenMo"
+                        android:textSize="@dimen/_25ssp" />
+
+                    <TextView
+                        android:id="@+id/tvLeResultTaiXiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.2"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="70%"
+                        android:textColor="@color/colorVinID"
+                        android:textSize="@dimen/_30ssp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_8sdp"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_3sdp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:text="Bé "
+                        android:textColor="@color/colorDenMo"
+                        android:textSize="@dimen/_25ssp" />
+
+                    <TextView
+                        android:id="@+id/tvBeResultTaiXiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.2"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="80%"
+                        android:textColor="@color/colorVinID"
+                        android:textSize="@dimen/_30ssp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill"
+                android:layout_weight="1"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_3sdp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:text="Chẵn "
+                        android:textColor="@color/colorDenMo"
+                        android:textSize="@dimen/_25ssp" />
+
+                    <TextView
+                        android:id="@+id/tvChanResultTaiXiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.2"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="20%"
+                        android:textColor="@color/colorVinID"
+                        android:textSize="@dimen/_30ssp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvHuongDanAnalyzerTaiXiu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_vertical"
+        android:maxLines="3"
+        android:textColor="@color/colorVinID"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/chucmayman"
+        android:textColor="@color/colorDenPress"
+        android:textSize="@dimen/_11ssp" />
+
+</LinearLayout>

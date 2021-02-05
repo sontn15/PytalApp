@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorDoLogoPress" />
+            <corners android:radius="@dimen/_10sdp" />
+            <stroke android:width="@dimen/_1sdp" android:color="@color/colorDoLogoPress" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorDoLogo" />
+            <corners android:radius="@dimen/_10sdp" />
+            <gradient android:endColor="@color/colorDoLogo" android:gradientRadius="25dp" android:startColor="@color/colorDoLogo" />
+        </shape>
+    </item>
+</selector>
