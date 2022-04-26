@@ -3,12 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/drawable/shape_bg_button_den.xml" value="0.1965" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/drawable/splash_background.xml" value="0.188" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.358695652173913" />
         <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_dashboard_game.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_game_baccarat.xml" value="0.25" />
         <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_game_soicau.xml" value="0.358695652173913" />
         <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_game_taixiu.xml" value="0.358695652173913" />
-        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_game_xocdia.xml" value="0.358695652173913" />
-        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_guide.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_game_xocdia.xml" value="0.33" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_guide.xml" value="0.25" />
         <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_manage_settings.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_manage_soicau.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_manage_soicau3mien.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_manage_user.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/activity_option_soicau.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/dialog_list_number.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/dialog_new_soicau_mb.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/fragment_manager_soicau_mb.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/fragment_manager_soicau_mn.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/fragment_manager_soicau_mt.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/My Project/PytalApp/app/src/main/res/layout/item_user.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>

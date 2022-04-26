@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HACKBET 5.0</string>
+    <string name="app_name">TOOL BET 5.0</string>
     <string name="soban">Số bàn:</string>
     <string name="phantich">Phân tích</string>
     <string name="ketqua_chanle">Kết quả chẵn lẻ:</string>
@@ -12,7 +12,7 @@
     <string name="nhaptenbanbaogom">Nhập tên bàn cần phân tích</string>
     <string name="huongdan">HD: nhập tên bàn và đợi máy xóc xong bấm nút phân tích, hệ thống sẽ đưa ra kết quả phân tích</string>
     <string name="chucmayman">Chúc bạn may mắn!</string>
-    <string name="chaomungtoianalyzer">Chào mừng tới HACKBET 5.0</string>
+    <string name="chaomungtoianalyzer">Chào mừng tới TOOL BET 5.0</string>
     <string name="huongdannhapotp">  Vui lòng nhập mã phần mềm vào ô</string>
     <string name="dangnhap">Đăng nhập</string>
     <string name="nhanmaphanmem">NHẬN MÃ PHẦN MỀM</string>
@@ -39,7 +39,7 @@
     <string name="qluser">QL Mã Code</string>
     <string name="qlLottoBet">QL Lotto Bet</string>
     <string name="qlSoiCauMB">QL Soi Cầu</string>
-    <string name="game">HACKBET 5.0</string>
+    <string name="game">TOOL BET 5.0</string>
     <string name="themmoilottobet">Thêm mới LOTTOBET - B</string>
     <string name="sokyhint">Số kỳ</string>
     <string name="haunhihint">Hậu nhị Digit</string>

@@ -6,7 +6,7 @@
     android:id="@+id/rlLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDenMo"
+    android:background="@drawable/background_de"
     android:orientation="vertical"
     android:weightSum="8">
 
@@ -83,10 +83,10 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_15sdp"
+                android:id="@+id/imvZalo"
                 android:layout_weight="6"
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:src="@drawable/ic_qrcode_zalo"
+                android:scaleX="1.2"
+                android:src="@drawable/ic_zalo"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/llActivityAnalyzerBaccarat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baccarat_70"
+    android:background="@drawable/background_de"
     android:orientation="vertical"
     android:weightSum="17.5"
     tools:context=".ui.activity.GameBaccaratActivity">
@@ -21,7 +21,7 @@
         android:gravity="center_vertical"
         android:paddingStart="@dimen/_3sdp"
         android:text="@string/nhaptenbanbaogom"
-        android:textColor="@color/colorDenPress"
+        android:textColor="@color/white"
         android:textSize="@dimen/_11ssp"
         android:textStyle="bold" />
 
@@ -64,8 +64,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/_5sdp"
-        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -75,7 +75,7 @@
             android:fontFamily="@font/roboto_regular"
             android:gravity="center_vertical"
             android:text="@string/soban"
-            android:textColor="@color/colorDenPress"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
 
@@ -87,7 +87,7 @@
             android:gravity="right|center_vertical"
             android:text="B1234"
             android:textColor="@color/colorVinID"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
 
@@ -96,8 +96,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/_5sdp"
-        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -107,7 +107,7 @@
             android:fontFamily="@font/roboto_regular"
             android:gravity="center_vertical"
             android:text="@string/ketqua"
-            android:textColor="@color/colorDenPress"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
 
@@ -119,7 +119,7 @@
             android:gravity="right|center_vertical"
             android:text="Chẵn"
             android:textColor="@color/colorVinID"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
     </LinearLayout>
@@ -127,8 +127,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/_5sdp"
-        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -147,7 +147,7 @@
             android:fontFamily="@font/roboto_medium"
             android:gravity="right|center_vertical"
             android:textColor="@color/colorVinID"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
 
@@ -162,7 +162,7 @@
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
         android:textColor="@color/colorVangLogoPress"
-        android:textSize="@dimen/_25ssp"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -214,7 +214,7 @@
                         android:paddingTop="@dimen/_3sdp"
                         android:text="Player "
                         android:textColor="@color/colorDenMo"
-                        android:textSize="@dimen/_25ssp" />
+                        android:textSize="@dimen/_20ssp" />
 
                     <TextView
                         android:id="@+id/tvPlayerResultBaccarat"
@@ -226,7 +226,7 @@
                         android:gravity="center"
                         android:text="30%"
                         android:textColor="@color/colorVinID"
-                        android:textSize="@dimen/_30ssp" />
+                        android:textSize="@dimen/_25ssp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -257,7 +257,7 @@
                         android:paddingTop="@dimen/_3sdp"
                         android:text="Banker "
                         android:textColor="@color/colorDenMo"
-                        android:textSize="@dimen/_25ssp" />
+                        android:textSize="@dimen/_20ssp" />
 
                     <TextView
                         android:id="@+id/tvBankerResultBaccarat"
@@ -269,7 +269,7 @@
                         android:gravity="center"
                         android:text="70%"
                         android:textColor="@color/colorVinID"
-                        android:textSize="@dimen/_30ssp" />
+                        android:textSize="@dimen/_20ssp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -308,7 +308,7 @@
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
                         android:textColor="@color/colorDenMo"
-                        android:textSize="@dimen/_25ssp" />
+                        android:textSize="@dimen/_20ssp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -318,7 +318,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:textColor="@color/colorVinID"
-                        android:textSize="@dimen/_30ssp" />
+                        android:textSize="@dimen/_25ssp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -348,7 +348,7 @@
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
                         android:textColor="@color/colorDenMo"
-                        android:textSize="@dimen/_25ssp" />
+                        android:textSize="@dimen/_20ssp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -358,7 +358,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:textColor="@color/colorVinID"
-                        android:textSize="@dimen/_30ssp" />
+                        android:textSize="@dimen/_25ssp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -386,7 +386,7 @@
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="@string/chucmayman"
-        android:textColor="@color/colorDenPress"
+        android:textColor="@color/white"
         android:textSize="@dimen/_11ssp" />
 
 </LinearLayout>

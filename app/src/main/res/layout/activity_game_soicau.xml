@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDenMo"
+    android:background="@drawable/background_de"
     android:orientation="vertical"
     android:weightSum="13.2">
 
@@ -25,7 +25,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="@dimen/_25sdp"
         android:layout_marginRight="@dimen/_25sdp"
-        android:layout_weight="1.2"
+        android:layout_weight="1"
         android:background="@drawable/shape_bg_black"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"

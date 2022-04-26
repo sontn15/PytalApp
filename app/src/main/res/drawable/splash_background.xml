@@ -13,7 +13,7 @@
         android:height="250dp"
         android:gravity="center"
         tools:ignore="UnusedAttribute">
-        <bitmap android:src="@drawable/ic_launcher" />
+        <bitmap android:src="@drawable/ic_app" />
     </item>
 
 </layer-list>

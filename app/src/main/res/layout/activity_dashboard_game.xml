@@ -6,7 +6,7 @@
     android:id="@+id/rlLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDenMo"
+    android:background="@drawable/background_de"
     android:orientation="vertical"
     android:weightSum="10">
 
@@ -31,7 +31,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        android:text="@string/pytal_web"
+        android:text="@string/app_name"
         android:textColor="@color/colorVang"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
@@ -66,7 +66,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/xocdia"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
 
             <Button
@@ -81,7 +81,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/baccarat"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
 
             <Button
@@ -96,7 +96,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/taixiu"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
 
             <Button
@@ -111,7 +111,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/soicau"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

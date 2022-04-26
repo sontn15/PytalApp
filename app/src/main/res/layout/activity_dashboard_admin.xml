@@ -6,7 +6,7 @@
     android:id="@+id/rlLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDenMo">
+    android:background="@drawable/background_de">
 
     <ImageView
         android:id="@+id/imv_app"
@@ -27,7 +27,7 @@
         android:layout_marginBottom="@dimen/_38sdp"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        android:text="@string/pytal_web"
+        android:text="@string/app_name"
         android:textColor="@color/colorVang"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
@@ -75,7 +75,7 @@
                         android:gravity="center"
                         android:text="@string/app_name"
                         android:textColor="@color/colorVangLogo"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold"
                         tools:ignore="NestedWeights" />
 
@@ -87,7 +87,7 @@
                         android:gravity="center"
                         android:text="@string/app_name"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -112,7 +112,7 @@
                         android:gravity="center"
                         android:text="MÃ CODE"
                         android:textColor="@color/colorVangLogo"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold"
                         tools:ignore="NestedWeights" />
 
@@ -124,7 +124,7 @@
                         android:gravity="center"
                         android:text="@string/qluser"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -148,7 +148,7 @@
                         android:gravity="center"
                         android:text="@string/soicau_khong_wm"
                         android:textColor="@color/colorVangLogo"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold"
                         tools:ignore="NestedWeights" />
 
@@ -160,7 +160,7 @@
                         android:gravity="center"
                         android:text="@string/qlSoiCauMB"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -192,7 +192,7 @@
                         android:gravity="center"
                         android:text="SETTING"
                         android:textColor="@color/colorVang"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold"
                         tools:ignore="NestedWeights" />
 
@@ -204,7 +204,7 @@
                         android:gravity="center"
                         android:text="@string/setting"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_11ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -215,7 +215,7 @@
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:weightSum="10"></LinearLayout>
+                    android:weightSum="10"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
