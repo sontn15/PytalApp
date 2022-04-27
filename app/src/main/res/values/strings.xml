@@ -3,6 +3,7 @@
     <string name="soban">Số bàn:</string>
     <string name="phantich">Phân tích</string>
     <string name="ketqua_chanle">Kết quả chẵn lẻ:</string>
+    <string name="ketqua_rongho">Kết quả rồng hổ:</string>
     <string name="ketqua_player">Kết quả Player:</string>
     <string name="ketqua">Kết quả:</string>
     <string name="ketqua_banker">Kết quả Banker:</string>
@@ -22,6 +23,7 @@
     <string name="xocdia">XÓC ĐĨA</string>
     <string name="baccarat">BACCARAT</string>
     <string name="taixiu">TÀI XỈU</string>
+    <string name="rongho">RỒNG HỔ</string>
     <string name="soicau">SOI CẦU 3 MIỀN</string>
     <string name="soicau_khong_wm">SOI CẦU</string>
     <string name="bachthulo">BẠCH THỦ LÔ</string>
@@ -93,4 +95,8 @@
     <string name="cauhinh_huongdan_taixiu">Cấu hình hướng dẫn Tài xỉu</string>
     <string name="cauhinh_huongdan_baccarat">Cấu hình hướng dẫn Baccarat</string>
     <string name="nhap_daydy_thong_tin">Cần nhập đầy đủ thông tin</string>
+    <string name="btnKuCasino">KU CASINO</string>
+    <string name="btnWmCasino">WM CASINO</string>
+    <string name="btnBBinCasino">BBIN CASINO</string>
+    <string name="btnXocDia3D">XÓC ĐĨA 3D</string>
 </resources>
