@@ -46,6 +46,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
+            android:name=".ui.activity.GameXocDiaKuCasinoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".ui.activity.GameBaccaratActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 

@@ -86,7 +86,7 @@
             android:fontFamily="@font/roboto_medium"
             android:gravity="right|center_vertical"
             android:text="B1234"
-            android:textColor="@color/colorVinID"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
@@ -118,7 +118,7 @@
             android:fontFamily="@font/roboto_medium"
             android:gravity="right|center_vertical"
             android:text="Chẵn"
-            android:textColor="@color/colorVinID"
+            android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />

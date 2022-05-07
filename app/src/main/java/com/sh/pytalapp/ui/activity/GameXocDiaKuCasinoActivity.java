@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.sh.pytalapp.R;
 import com.sh.pytalapp.database.MySharedPreferences;
 import com.sh.pytalapp.database.ResourceData;
+import com.sh.pytalapp.model.ChanLe;
 import com.sh.pytalapp.model.SettingModel;
 import com.sh.pytalapp.model.ToBe;
 import com.sh.pytalapp.utils.Const;
@@ -32,17 +33,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class GameBaccaratActivity extends AppCompatActivity implements View.OnClickListener {
+public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnAnalyzer;
     private EditText edtTableInput;
     private ProgressDialog progressDialog;
     private TextView tvHuongDanAnalyzer;
-    private TextView tvTableName, tvResultForPlayerBankerBaccarat;
-    private TextView tvBankerResultBaccarat, tvPlayerResultBaccarat;
+    private TextView tvTableName, tvResultForToBe, tvResultForChanLe;
+    private TextView tvBeResult, tvChanResult, tvLeResult, tvToResult;
 
     private Long soLanBamHienTai;
     private ToBe toBeSelected;
+    private List<ChanLe> listChanLe;
     private List<ToBe> listToBe;
     private MySharedPreferences preferences;
     private SettingModel settingModel;
@@ -50,7 +52,7 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_baccarat);
+        setContentView(R.layout.activity_game_xocdia_kucasino);
         intView();
         initData();
         clearData();
@@ -70,16 +72,20 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void intView() {
-        btnAnalyzer = this.findViewById(R.id.btnAnalyzerBaccarat);
-        edtTableInput = this.findViewById(R.id.edtTableCodeBaccarat);
-        tvHuongDanAnalyzer = this.findViewById(R.id.tvHuongDanAnalyzerBaccarat);
+        btnAnalyzer = this.findViewById(R.id.btnAnalyzerXocDia);
+        edtTableInput = this.findViewById(R.id.edtTableCodeXocDia);
+        tvHuongDanAnalyzer = this.findViewById(R.id.tvHuongDanAnalyzerXocDia);
 
-        tvTableName = this.findViewById(R.id.tvNameTableBaccarat);
-        tvResultForPlayerBankerBaccarat = this.findViewById(R.id.tvResultForPlayerBankerBaccarat);
-        tvBankerResultBaccarat = this.findViewById(R.id.tvBankerResultBaccarat);
-        tvPlayerResultBaccarat = this.findViewById(R.id.tvPlayerResultBaccarat);
+        tvTableName = this.findViewById(R.id.tvNameTableXocDia);
+        tvResultForChanLe = this.findViewById(R.id.tvResultForChanLeXocDia);
+        tvResultForToBe = this.findViewById(R.id.tvResultForToBeXocDia);
 
-        progressDialog = new ProgressDialog(GameBaccaratActivity.this);
+        tvBeResult = this.findViewById(R.id.tvBeResultXocDia);
+        tvChanResult = this.findViewById(R.id.tvChanResultXocDia);
+        tvLeResult = this.findViewById(R.id.tvLeResultXocDia);
+        tvToResult = this.findViewById(R.id.tvToResultXocDia);
+
+        progressDialog = new ProgressDialog(GameXocDiaKuCasinoActivity.this);
         progressDialog.setMessage("Đang phân tích kết quả...");
         progressDialog.setCanceledOnTouchOutside(false);
 
@@ -88,10 +94,13 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void clearData() {
+        tvToResult.setText("");
         tvTableName.setText("");
-        tvBankerResultBaccarat.setText("");
-        tvPlayerResultBaccarat.setText("");
-        tvResultForPlayerBankerBaccarat.setText("");
+        tvBeResult.setText("");
+        tvChanResult.setText("");
+        tvLeResult.setText("");
+        tvResultForToBe.setText("");
+        tvResultForChanLe.setText("");
     }
 
     private void showProgressDialog() {
@@ -114,13 +123,14 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void initData() {
-        preferences = new MySharedPreferences(GameBaccaratActivity.this);
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
+        preferences = new MySharedPreferences(GameXocDiaKuCasinoActivity.this);
+        listChanLe = new ArrayList<>(ResourceData.buildAllListTaiXiu());
 
-        buildRandomDataForPlayerBanker();
+        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
+        buildRandomDataForToBe();
 
         //Set text guide
-        if (NetworkUtils.haveNetwork(GameBaccaratActivity.this)) {
+        if (NetworkUtils.haveNetwork(GameXocDiaKuCasinoActivity.this)) {
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(Const.FIREBASE_REF.SETTINGS);
             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -130,7 +140,7 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
                         break;
                     }
                     if (settingModel != null) {
-                        tvHuongDanAnalyzer.setText(settingModel.getHuongDanBaccarat());
+                        tvHuongDanAnalyzer.setText(settingModel.getHuongDanXocDia());
                     }
                 }
 
@@ -144,7 +154,7 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    private void buildRandomDataForPlayerBanker() {
+    private void buildRandomDataForToBe() {
         listToBe = preferences.getListChanLe(Const.KEY_LIST_TO_BE);
         if (listToBe == null || listToBe.isEmpty()) {
             listToBe = new ArrayList<>(ResourceData.buildAllListChanLe());
@@ -161,8 +171,8 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btnAnalyzerBaccarat) {
-            if (NetworkUtils.haveNetwork(GameBaccaratActivity.this)) {
+        if (v.getId() == R.id.btnAnalyzerXocDia) {
+            if (NetworkUtils.haveNetwork(GameXocDiaKuCasinoActivity.this)) {
                 hideKeyboard();
                 showProgressDialog();
                 Handler handler = new Handler();
@@ -171,7 +181,7 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
                     onClickAnalyzerButton();
                 }, 3000);
             } else {
-                Toast.makeText(GameBaccaratActivity.this, getResources().getString(R.string.check_connection_network), Toast.LENGTH_SHORT).show();
+                Toast.makeText(GameXocDiaKuCasinoActivity.this, getResources().getString(R.string.check_connection_network), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -183,14 +193,15 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
         String tableCode = edtTableInput.getText().toString();
         boolean isCheck = validateTableCodeInput(tableCode);
         if (isCheck) {
-            analyzerPlayerBanker();
+            analyzerChanLe();
+            analyzerToBe();
             tvTableName.setText(tableCode);
         }
     }
 
     private boolean validateTableCodeInput(String tableCode) {
         if (tableCode.isEmpty()) {
-            Toast.makeText(GameBaccaratActivity.this, "Vui lòng nhập tên bàn trước", Toast.LENGTH_SHORT).show();
+            Toast.makeText(GameXocDiaKuCasinoActivity.this, "Vui lòng nhập tên bàn trước", Toast.LENGTH_SHORT).show();
             hideKeyboard();
             return false;
         }
@@ -198,9 +209,9 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     }
 
     /**
-     * Ham xu ly voi Player Banker
+     * Ham xu ly voi To Be
      */
-    private void analyzerPlayerBanker() {
+    private void analyzerToBe() {
         toBeSelected = preferences.getChanLe(Const.KEY_TO_BE_SELECTED);
         soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
 
@@ -209,17 +220,37 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
 
         if (soLanBamHienTai > tongSoLanBam) {
             soLanBamHienTai = 1L;
-            buildRandomDataForPlayerBanker();
+            buildRandomDataForToBe();
         }
-        int tiLePlayer = toBeSelected.getListTiLeBe().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-        int tiLeBanker = toBeSelected.getListTileTo().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
+        int tiLeBe = toBeSelected.getListTiLeBe().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
+        int tiLeTo = toBeSelected.getListTileTo().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
 
-        tvPlayerResultBaccarat.setText(tiLePlayer + "%");
-        tvBankerResultBaccarat.setText(tiLeBanker + "%");
-        tvResultForPlayerBankerBaccarat.setText(tiLeBanker >= tiLePlayer ? "Banker" : "Player");
+        tvToResult.setText(tiLeTo + "%");
+        tvBeResult.setText(tiLeBe + "%");
+        tvResultForToBe.setText(tiLeTo > tiLeBe ? "Tài" : "Xỉu");
 
         preferences.putLong(Const.KEY_SO_LAN_BAM_HIEN_TAI, soLanBamHienTai);
         preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
         preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
+    }
+
+    /**
+     * Ham xu ly voi Chan Le
+     */
+    private void analyzerChanLe() {
+        int indexNew;
+        int indexOld = preferences.getInt(Const.KEY_INDEX_CHAN_LE_RANDOM);
+
+        Random random = new Random();
+        do {
+            indexNew = random.nextInt(listChanLe.size());
+        } while (indexOld == indexNew);
+
+        ChanLe obj = listChanLe.get(indexNew);
+        tvLeResult.setText(obj.getTiLeLe() + "%");
+        tvChanResult.setText(obj.getTiLeChan() + "%");
+        tvResultForChanLe.setText(obj.getTiLeChan() > obj.getTiLeLe() ? "Chẵn" : "Lẻ");
+
+        preferences.putInt(Const.KEY_INDEX_CHAN_LE_RANDOM, indexNew);
     }
 }

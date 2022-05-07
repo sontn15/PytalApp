@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/llActivityAnalyzerTaiXiu"
+    android:id="@+id/llActivityAnalyzerXocDia"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_de"
@@ -11,7 +11,7 @@
     tools:context=".ui.activity.GameXocDiaActivity">
 
     <TextView
-        android:id="@+id/tvTitleNhapTenBanTaiXiu"
+        android:id="@+id/tvTitleNhapTenBanXocDia"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/_5sdp"
@@ -26,7 +26,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtTableCodeTaiXiu"
+        android:id="@+id/edtTableCodeXocDia"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/_5sdp"
@@ -49,7 +49,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/btnAnalyzerTaiXiu"
+        android:id="@+id/btnAnalyzerXocDia"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="0dp"
@@ -80,7 +80,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvNameTableTaiXiu"
+            android:id="@+id/tvNameTableXocDia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_medium"
@@ -112,7 +112,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvResultForChanLeTaiXiu"
+            android:id="@+id/tvResultForChanLeXocDia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_medium"
@@ -137,13 +137,13 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center_vertical"
-            android:text="@string/ketqua_tobe"
+            android:text="@string/ketqua_taixiu"
             android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvResultForToBeTaiXiu"
+            android:id="@+id/tvResultForToBeXocDia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_medium"
@@ -169,7 +169,7 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/llBorderAnalyzerTaiXiu"
+        android:id="@+id/llBorderAnalyzerXocDia"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/_16sdp"
@@ -215,12 +215,12 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
-                        android:text="To "
+                        android:text="Tài "
                         android:textColor="@color/colorDenMo"
                         android:textSize="@dimen/_20ssp" />
 
                     <TextView
-                        android:id="@+id/tvToResultTaiXiu"
+                        android:id="@+id/tvToResultXocDia"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -263,7 +263,7 @@
                         android:textSize="@dimen/_20ssp" />
 
                     <TextView
-                        android:id="@+id/tvLeResultTaiXiu"
+                        android:id="@+id/tvLeResultXocDia"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -310,12 +310,12 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:paddingTop="@dimen/_3sdp"
-                        android:text="Bé "
+                        android:text="Xỉu "
                         android:textColor="@color/colorDenMo"
                         android:textSize="@dimen/_20ssp" />
 
                     <TextView
-                        android:id="@+id/tvBeResultTaiXiu"
+                        android:id="@+id/tvBeResultXocDia"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -358,7 +358,7 @@
                         android:textSize="@dimen/_20ssp" />
 
                     <TextView
-                        android:id="@+id/tvChanResultTaiXiu"
+                        android:id="@+id/tvChanResultXocDia"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -375,7 +375,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvHuongDanAnalyzerTaiXiu"
+        android:id="@+id/tvHuongDanAnalyzerXocDia"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/_5sdp"
@@ -395,7 +395,7 @@
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="@string/chucmayman"
-        android:textColor="@color/white"
+        android:textColor="@color/colorDenPress"
         android:textSize="@dimen/_11ssp" />
 
 </LinearLayout>
