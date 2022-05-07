@@ -61,7 +61,7 @@ public class DashboardXocDiaActivity extends AppCompatActivity implements View.O
     }
 
     private void onClickKuCasino() {
-        Intent mIntent = new Intent(DashboardXocDiaActivity.this, GameXocDiaActivity.class);
+        Intent mIntent = new Intent(DashboardXocDiaActivity.this, GameXocDiaKuCasinoActivity.class);
         startActivity(mIntent);
     }
 
