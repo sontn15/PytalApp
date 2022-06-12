@@ -212,26 +212,13 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
      * Ham xu ly voi To Be
      */
     private void analyzerToBe() {
-        toBeSelected = preferences.getChanLe(Const.KEY_TO_BE_SELECTED);
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
+        Random random = new Random();
+        int tiLeBe = random.nextInt(99);
+        int tiLeTo = 100 - tiLeBe;
 
-        int tongSoLanBam = toBeSelected.getTongSoLanQuay();
-        soLanBamHienTai = soLanBamHienTai + 1;
-
-        if (soLanBamHienTai > tongSoLanBam) {
-            soLanBamHienTai = 1L;
-            buildRandomDataForToBe();
-        }
-        int tiLeBe = toBeSelected.getListTiLeBe().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-        int tiLeTo = toBeSelected.getListTileTo().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-
-        tvToResult.setText(tiLeTo + "%");
         tvBeResult.setText(tiLeBe + "%");
+        tvToResult.setText(tiLeTo + "%");
         tvResultForToBe.setText(tiLeTo > tiLeBe ? "Tài" : "Xỉu");
-
-        preferences.putLong(Const.KEY_SO_LAN_BAM_HIEN_TAI, soLanBamHienTai);
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
     }
 
     /**
