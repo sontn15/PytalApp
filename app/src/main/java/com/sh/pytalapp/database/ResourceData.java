@@ -2,11 +2,9 @@ package com.sh.pytalapp.database;
 
 
 import com.sh.pytalapp.model.ChanLe;
-import com.sh.pytalapp.model.ToBe;
 import com.sh.pytalapp.model.dto.NumberDTO;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ResourceData {
@@ -69,148 +67,6 @@ public class ResourceData {
         data.add(ChanLe.builder().code("S91").name("90-10").tiLeChan(22).tiLeLe(78).build());
         data.add(ChanLe.builder().code("S91").name("90-10").tiLeChan(89).tiLeLe(11).build());
         data.add(ChanLe.builder().code("S91").name("90-10").tiLeChan(40).tiLeLe(60).build());
-
-        return data;
-    }
-
-    /**
-     * Tong so 10 mo hinh chan le
-     * {1-1, 2-1, 3-1, 2-2, 3-2, 3-3, 4-3, 3-2-1, 3-2-2, 3-2-3}
-     */
-    public static List<ToBe> buildAllListChanLe() {
-        List<ToBe> data = new ArrayList<>();
-
-        //Data for Chan
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("2-1").code("C21").soLanQuayTo(2).soLanQuayBe(1).tongSoLanQuay(3)
-                .listTileTo(Arrays.asList(95, 95, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-1").code("C31").soLanQuayTo(3).soLanQuayBe(1).tongSoLanQuay(4)
-                .listTileTo(Arrays.asList(95, 95, 95, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 95))
-                .build());
-        data.add(ToBe.builder().name("2-2").code("C22").soLanQuayTo(2).soLanQuayBe(2).tongSoLanQuay(4)
-                .listTileTo(Arrays.asList(95, 95, 5, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-2").code("C32").soLanQuayTo(3).soLanQuayBe(2).tongSoLanQuay(5)
-                .listTileTo(Arrays.asList(95, 95, 95, 95, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-3").code("C33").soLanQuayTo(3).soLanQuayBe(3).tongSoLanQuay(6)
-                .listTileTo(Arrays.asList(95, 95, 95, 5, 5, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 95, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("4-3").code("C43").soLanQuayTo(4).soLanQuayBe(3).tongSoLanQuay(7)
-                .listTileTo(Arrays.asList(95, 95, 95, 95, 95, 5, 5))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 5, 5, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("3-2-3").code("C323").soLanQuayTo(6).soLanQuayBe(2).tongSoLanQuay(8)
-                .listTileTo(Arrays.asList(95, 95, 95, 5, 5, 5, 95, 95))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 95, 95, 95, 5, 5))
-                .build());
-        data.add(ToBe.builder().name("3-2-2").code("C322").soLanQuayTo(5).soLanQuayBe(2).tongSoLanQuay(7)
-                .listTileTo(Arrays.asList(95, 95, 95, 5, 5, 95, 95))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 95, 95, 5, 5))
-                .build());
-        data.add(ToBe.builder().name("3-2-1").code("C321").soLanQuayTo(4).soLanQuayBe(2).tongSoLanQuay(6)
-                .listTileTo(Arrays.asList(95, 95, 95, 5, 5, 95))
-                .listTiLeBe(Arrays.asList(5, 5, 5, 95, 95, 5))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("C11").soLanQuayTo(1).soLanQuayBe(1).tongSoLanQuay(2)
-                .listTileTo(Arrays.asList(95, 5))
-                .listTiLeBe(Arrays.asList(5, 95))
-                .build());
-
-        //Data for Le
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("2-1").code("L21").soLanQuayBe(2).soLanQuayTo(1).tongSoLanQuay(3)
-                .listTiLeBe(Arrays.asList(95, 95, 5))
-                .listTileTo(Arrays.asList(5, 5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-1").code("L31").soLanQuayBe(3).soLanQuayTo(1).tongSoLanQuay(4)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5))
-                .listTileTo(Arrays.asList(5, 5, 5, 95))
-                .build());
-        data.add(ToBe.builder().name("2-2").code("L22").soLanQuayBe(2).soLanQuayTo(2).tongSoLanQuay(4)
-                .listTiLeBe(Arrays.asList(95, 95, 5, 5))
-                .listTileTo(Arrays.asList(5, 5, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-2").code("L32").soLanQuayBe(3).soLanQuayTo(2).tongSoLanQuay(5)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5, 5))
-                .listTileTo(Arrays.asList(5, 5, 5, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("3-3").code("L33").soLanQuayBe(3).soLanQuayTo(3).tongSoLanQuay(6)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5, 5, 5))
-                .listTileTo(Arrays.asList(5, 5, 5, 95, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("4-3").code("L43").soLanQuayBe(4).soLanQuayTo(3).tongSoLanQuay(7)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 95, 5, 5, 5))
-                .listTileTo(Arrays.asList(5, 5, 5, 5, 95, 95, 95))
-                .build());
-        data.add(ToBe.builder().name("3-2-3").code("L323").soLanQuayBe(6).soLanQuayTo(2).tongSoLanQuay(8)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5, 5, 95, 95, 95))
-                .listTileTo(Arrays.asList(5, 5, 5, 95, 95, 5, 5, 5))
-                .build());
-        data.add(ToBe.builder().name("3-2-2").code("L322").soLanQuayBe(5).soLanQuayTo(2).tongSoLanQuay(7)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5, 5, 95, 95))
-                .listTileTo(Arrays.asList(5, 5, 5, 95, 95, 5, 5))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("3-2-1").code("L321").soLanQuayBe(4).soLanQuayTo(2).tongSoLanQuay(6)
-                .listTiLeBe(Arrays.asList(95, 95, 95, 5, 5, 95))
-                .listTileTo(Arrays.asList(5, 5, 5, 95, 95, 5))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
-        data.add(ToBe.builder().name("1-1").code("L11").soLanQuayBe(1).soLanQuayTo(1).tongSoLanQuay(2)
-                .listTiLeBe(Arrays.asList(95, 5))
-                .listTileTo(Arrays.asList(5, 95))
-                .build());
 
         return data;
     }

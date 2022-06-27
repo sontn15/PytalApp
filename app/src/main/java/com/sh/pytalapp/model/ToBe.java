@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.io.Serializable;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,8 +21,6 @@ public class ToBe implements Parcelable, Serializable {
     private int soLanQuayTo;
     private int soLanQuayBe;
     private int tongSoLanQuay;
-    private List<Integer> listTileTo;
-    private List<Integer> listTiLeBe;
 
     protected ToBe(Parcel in) {
         name = in.readString();

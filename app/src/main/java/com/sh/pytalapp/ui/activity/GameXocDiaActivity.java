@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,15 +23,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.sh.pytalapp.R;
 import com.sh.pytalapp.database.MySharedPreferences;
 import com.sh.pytalapp.database.ResourceData;
-import com.sh.pytalapp.model.ChanLe;
 import com.sh.pytalapp.model.SettingModel;
-import com.sh.pytalapp.model.ToBe;
 import com.sh.pytalapp.utils.Const;
 import com.sh.pytalapp.utils.NetworkUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class GameXocDiaActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,15 +35,10 @@ public class GameXocDiaActivity extends AppCompatActivity implements View.OnClic
     private Button btnAnalyzer;
     private EditText edtTableInput;
     private ProgressDialog progressDialog;
-    private TextView tvHuongDanAnalyzer, tvTitleNhapTenBan;
-    private LinearLayout llActivityAnalyzer, llBorderAnalyzer;
+    private TextView tvHuongDanAnalyzer;
     private TextView tvTableName, tvResultForToBe, tvResultForChanLe;
     private TextView tvBeResult, tvChanResult, tvLeResult, tvToResult;
 
-    private Long soLanBamHienTai;
-    private ToBe toBeSelected;
-    private List<ChanLe> listChanLe;
-    private List<ToBe> listToBe;
     private MySharedPreferences preferences;
     private SettingModel settingModel;
 
@@ -82,14 +72,11 @@ public class GameXocDiaActivity extends AppCompatActivity implements View.OnClic
         tvTableName = this.findViewById(R.id.tvNameTableXocDia);
         tvResultForChanLe = this.findViewById(R.id.tvResultForChanLeXocDia);
         tvResultForToBe = this.findViewById(R.id.tvResultForToBeXocDia);
-        tvTitleNhapTenBan = this.findViewById(R.id.tvTitleNhapTenBanXocDia);
 
         tvBeResult = this.findViewById(R.id.tvBeResultXocDia);
         tvChanResult = this.findViewById(R.id.tvChanResultXocDia);
         tvLeResult = this.findViewById(R.id.tvLeResultXocDia);
         tvToResult = this.findViewById(R.id.tvToResultXocDia);
-        llBorderAnalyzer = this.findViewById(R.id.llBorderAnalyzerXocDia);
-        llActivityAnalyzer = this.findViewById(R.id.llActivityAnalyzerXocDia);
 
         progressDialog = new ProgressDialog(GameXocDiaActivity.this);
         progressDialog.setMessage("Đang phân tích kết quả...");
@@ -130,10 +117,6 @@ public class GameXocDiaActivity extends AppCompatActivity implements View.OnClic
     @SuppressLint("UseCompatLoadingForDrawables")
     private void initData() {
         preferences = new MySharedPreferences(GameXocDiaActivity.this);
-        listChanLe = new ArrayList<>(ResourceData.buildAllListTaiXiu());
-
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
-        buildRandomDataForToBe();
 
         //Set text guide
         if (NetworkUtils.haveNetwork(GameXocDiaActivity.this)) {
@@ -158,21 +141,6 @@ public class GameXocDiaActivity extends AppCompatActivity implements View.OnClic
         } else {
             tvHuongDanAnalyzer.setText(getResources().getString(R.string.huongdan));
         }
-    }
-
-    private void buildRandomDataForToBe() {
-        listToBe = preferences.getListChanLe(Const.KEY_LIST_TO_BE);
-        if (listToBe == null || listToBe.isEmpty()) {
-            listToBe = new ArrayList<>(ResourceData.buildAllListChanLe());
-        }
-        Random random = new Random();
-        int index = random.nextInt(listToBe.size());
-        toBeSelected = listToBe.get(index);
-
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
-
-        listToBe.remove(index);
     }
 
     @Override
@@ -218,45 +186,25 @@ public class GameXocDiaActivity extends AppCompatActivity implements View.OnClic
      * Ham xu ly voi To Be
      */
     private void analyzerToBe() {
-        toBeSelected = preferences.getChanLe(Const.KEY_TO_BE_SELECTED);
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
+        Random random = new Random();
+        int tiLeBe = random.nextInt(99);
+        int tiLeTo = 100 - tiLeBe;
 
-        int tongSoLanBam = toBeSelected.getTongSoLanQuay();
-        soLanBamHienTai = soLanBamHienTai + 1;
-
-        if (soLanBamHienTai > tongSoLanBam) {
-            soLanBamHienTai = 1L;
-            buildRandomDataForToBe();
-        }
-        int tiLeBe = toBeSelected.getListTiLeBe().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-        int tiLeTo = toBeSelected.getListTileTo().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-
-        tvToResult.setText(tiLeTo + "%");
         tvBeResult.setText(tiLeBe + "%");
+        tvToResult.setText(tiLeTo + "%");
         tvResultForToBe.setText(tiLeTo > tiLeBe ? "To" : "Bé");
-
-        preferences.putLong(Const.KEY_SO_LAN_BAM_HIEN_TAI, soLanBamHienTai);
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
     }
 
     /**
      * Ham xu ly voi Chan Le
      */
     private void analyzerChanLe() {
-        int indexNew;
-        int indexOld = preferences.getInt(Const.KEY_INDEX_CHAN_LE_RANDOM);
-
         Random random = new Random();
-        do {
-            indexNew = random.nextInt(listChanLe.size());
-        } while (indexOld == indexNew);
+        int tiLeLe = random.nextInt(99);
+        int tiLeChan = 100 - tiLeLe;
 
-        ChanLe obj = listChanLe.get(indexNew);
-        tvLeResult.setText(obj.getTiLeLe() + "%");
-        tvChanResult.setText(obj.getTiLeChan() + "%");
-        tvResultForChanLe.setText(obj.getTiLeChan() > obj.getTiLeLe() ? "Chẵn" : "Lẻ");
-
-        preferences.putInt(Const.KEY_INDEX_CHAN_LE_RANDOM, indexNew);
+        tvLeResult.setText(tiLeLe + "%");
+        tvChanResult.setText(tiLeChan + "%");
+        tvResultForChanLe.setText(tiLeChan > tiLeLe ? "Chẵn" : "Lẻ");
     }
 }

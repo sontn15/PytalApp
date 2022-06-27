@@ -22,15 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.sh.pytalapp.R;
 import com.sh.pytalapp.database.MySharedPreferences;
-import com.sh.pytalapp.database.ResourceData;
-import com.sh.pytalapp.model.ChanLe;
 import com.sh.pytalapp.model.SettingModel;
-import com.sh.pytalapp.model.ToBe;
 import com.sh.pytalapp.utils.Const;
 import com.sh.pytalapp.utils.NetworkUtils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,11 +37,6 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
     private TextView tvTableName, tvResultForToBe, tvResultForChanLe;
     private TextView tvBeResult, tvChanResult, tvLeResult, tvToResult;
 
-    private Long soLanBamHienTai;
-    private ToBe toBeSelected;
-    private List<ChanLe> listChanLe;
-    private List<ToBe> listToBe;
-    private MySharedPreferences preferences;
     private SettingModel settingModel;
 
     @Override
@@ -65,10 +55,6 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
             progressDialog.dismiss();
             progressDialog = null;
         }
-        preferences.clearDataByKey(Const.KEY_LIST_TO_BE);
-        preferences.clearDataByKey(Const.KEY_TO_BE_SELECTED);
-        preferences.clearDataByKey(Const.KEY_SO_LAN_BAM_HIEN_TAI);
-        preferences.clearDataByKey(Const.KEY_INDEX_CHAN_LE_RANDOM);
     }
 
     private void intView() {
@@ -123,11 +109,6 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void initData() {
-        preferences = new MySharedPreferences(GameXocDiaKuCasinoActivity.this);
-        listChanLe = new ArrayList<>(ResourceData.buildAllListTaiXiu());
-
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
-        buildRandomDataForToBe();
 
         //Set text guide
         if (NetworkUtils.haveNetwork(GameXocDiaKuCasinoActivity.this)) {
@@ -152,21 +133,6 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
         } else {
             tvHuongDanAnalyzer.setText(getResources().getString(R.string.huongdan));
         }
-    }
-
-    private void buildRandomDataForToBe() {
-        listToBe = preferences.getListChanLe(Const.KEY_LIST_TO_BE);
-        if (listToBe == null || listToBe.isEmpty()) {
-            listToBe = new ArrayList<>(ResourceData.buildAllListChanLe());
-        }
-        Random random = new Random();
-        int index = random.nextInt(listToBe.size());
-        toBeSelected = listToBe.get(index);
-
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
-
-        listToBe.remove(index);
     }
 
     @Override
@@ -225,19 +191,12 @@ public class GameXocDiaKuCasinoActivity extends AppCompatActivity implements Vie
      * Ham xu ly voi Chan Le
      */
     private void analyzerChanLe() {
-        int indexNew;
-        int indexOld = preferences.getInt(Const.KEY_INDEX_CHAN_LE_RANDOM);
-
         Random random = new Random();
-        do {
-            indexNew = random.nextInt(listChanLe.size());
-        } while (indexOld == indexNew);
+        int tiLeLe = random.nextInt(99);
+        int tiLeChan = 100 - tiLeLe;
 
-        ChanLe obj = listChanLe.get(indexNew);
-        tvLeResult.setText(obj.getTiLeLe() + "%");
-        tvChanResult.setText(obj.getTiLeChan() + "%");
-        tvResultForChanLe.setText(obj.getTiLeChan() > obj.getTiLeLe() ? "Chẵn" : "Lẻ");
-
-        preferences.putInt(Const.KEY_INDEX_CHAN_LE_RANDOM, indexNew);
+        tvLeResult.setText(tiLeLe + "%");
+        tvChanResult.setText(tiLeChan + "%");
+        tvResultForChanLe.setText(tiLeChan > tiLeLe ? "Chẵn" : "Lẻ");
     }
 }

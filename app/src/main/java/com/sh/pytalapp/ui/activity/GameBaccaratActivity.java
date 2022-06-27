@@ -22,14 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.sh.pytalapp.R;
 import com.sh.pytalapp.database.MySharedPreferences;
-import com.sh.pytalapp.database.ResourceData;
 import com.sh.pytalapp.model.SettingModel;
-import com.sh.pytalapp.model.ToBe;
 import com.sh.pytalapp.utils.Const;
 import com.sh.pytalapp.utils.NetworkUtils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GameBaccaratActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,9 +37,6 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     private TextView tvTableName, tvResultForPlayerBankerBaccarat;
     private TextView tvBankerResultBaccarat, tvPlayerResultBaccarat;
 
-    private Long soLanBamHienTai;
-    private ToBe toBeSelected;
-    private List<ToBe> listToBe;
     private MySharedPreferences preferences;
     private SettingModel settingModel;
 
@@ -115,9 +108,6 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
     @SuppressLint("UseCompatLoadingForDrawables")
     private void initData() {
         preferences = new MySharedPreferences(GameBaccaratActivity.this);
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
-
-        buildRandomDataForPlayerBanker();
 
         //Set text guide
         if (NetworkUtils.haveNetwork(GameBaccaratActivity.this)) {
@@ -142,21 +132,6 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
         } else {
             tvHuongDanAnalyzer.setText(getResources().getString(R.string.huongdan));
         }
-    }
-
-    private void buildRandomDataForPlayerBanker() {
-        listToBe = preferences.getListChanLe(Const.KEY_LIST_TO_BE);
-        if (listToBe == null || listToBe.isEmpty()) {
-            listToBe = new ArrayList<>(ResourceData.buildAllListChanLe());
-        }
-        Random random = new Random();
-        int index = random.nextInt(listToBe.size());
-        toBeSelected = listToBe.get(index);
-
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
-
-        listToBe.remove(index);
     }
 
     @Override
@@ -201,25 +176,12 @@ public class GameBaccaratActivity extends AppCompatActivity implements View.OnCl
      * Ham xu ly voi Player Banker
      */
     private void analyzerPlayerBanker() {
-        toBeSelected = preferences.getChanLe(Const.KEY_TO_BE_SELECTED);
-        soLanBamHienTai = preferences.getLong(Const.KEY_SO_LAN_BAM_HIEN_TAI);
-
-        int tongSoLanBam = toBeSelected.getTongSoLanQuay();
-        soLanBamHienTai = soLanBamHienTai + 1;
-
-        if (soLanBamHienTai > tongSoLanBam) {
-            soLanBamHienTai = 1L;
-            buildRandomDataForPlayerBanker();
-        }
-        int tiLePlayer = toBeSelected.getListTiLeBe().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
-        int tiLeBanker = toBeSelected.getListTileTo().get(Integer.parseInt((soLanBamHienTai - 1) + ""));
+        Random random = new Random();
+        int tiLePlayer = random.nextInt(99);
+        int tiLeBanker = 100 - tiLePlayer;
 
         tvPlayerResultBaccarat.setText(tiLePlayer + "%");
         tvBankerResultBaccarat.setText(tiLeBanker + "%");
         tvResultForPlayerBankerBaccarat.setText(tiLeBanker >= tiLePlayer ? "Banker" : "Player");
-
-        preferences.putLong(Const.KEY_SO_LAN_BAM_HIEN_TAI, soLanBamHienTai);
-        preferences.putChanLe(Const.KEY_TO_BE_SELECTED, toBeSelected);
-        preferences.putListChanLe(Const.KEY_LIST_TO_BE, listToBe);
     }
 }
